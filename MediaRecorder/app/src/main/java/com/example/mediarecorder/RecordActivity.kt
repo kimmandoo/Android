@@ -17,6 +17,7 @@ import java.io.IOException
 private const val LOG_TAG = "AudioRecordTest"
 private const val REQUEST_RECORD_AUDIO_PERMISSION = 200
 
+//THIS IS SAMPLE CODE FROM DOC
 
 class RecordActivity : AppCompatActivity() {
 
