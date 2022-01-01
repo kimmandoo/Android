@@ -19,11 +19,5 @@
         android:layout_height="100dp"
         android:text="@string/btnStop"
         android:textSize="20sp" />
-    <Button
-        android:id="@+id/btnRecordRelease"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Release"
-        android:textSize="20sp" />
 
 </LinearLayout>
