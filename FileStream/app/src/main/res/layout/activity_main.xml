@@ -24,6 +24,11 @@
         android:id="@+id/btnSave"
         android:text="save"
         />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fileField"
+        android:hint="input filename"/>
 
 
 </LinearLayout>

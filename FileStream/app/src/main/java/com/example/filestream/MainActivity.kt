@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val textField = findViewById<EditText>(R.id.textField)
+        val fileField = findViewById<EditText>(R.id.fileField)
+
         val btnSave = findViewById<Button>(R.id.btnSave)
         val btnLoad = findViewById<Button>(R.id.btnLoad)
 //        val filepath = android.os.Environment.getExternalStorageDirectory().getAbsolutePath()
@@ -26,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnLoad.setOnClickListener {
-            textField.setText(loadFile(filename))
+            textField.setText(loadFile(fileField?.text.toString()+".txt"))
         }
     }
 
