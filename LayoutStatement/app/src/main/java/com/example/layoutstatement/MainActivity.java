@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn = findViewById(R.id.btn);
 
+        //Layout Inflator -> getSystemService()를 이용해 사용할 수 있다.
+
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
