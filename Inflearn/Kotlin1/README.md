@@ -14,3 +14,8 @@
 - CardView
 - Margin, Padding
 - Intent(data parsing)
+
+### Lec3
+
+- DataBinding(MVVM pattern training)
+- 
