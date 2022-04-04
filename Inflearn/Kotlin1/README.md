@@ -23,3 +23,6 @@
 
 ### Lec4
 
+- Custom Font
+- ListView
+- Adapter
