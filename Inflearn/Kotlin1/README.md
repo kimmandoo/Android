@@ -26,3 +26,5 @@
 - Custom Font
 - ListView
 - Adapter
+- Data class
+
