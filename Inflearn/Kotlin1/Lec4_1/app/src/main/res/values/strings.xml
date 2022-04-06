@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lec4_1</string>
+    <string name="textView">명언 위치</string>
+    <string name="btn">전체 명언보기</string>
+</resources>
