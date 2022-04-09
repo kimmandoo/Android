@@ -34,3 +34,9 @@
 - Constraint Layout
 - ListView
 - Adapter
+
+### Lec5
+
+- RecyclerView
+- Fragment
+- Navigation
