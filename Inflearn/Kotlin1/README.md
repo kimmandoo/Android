@@ -38,5 +38,11 @@
 ### Lec5
 
 - RecyclerView
-- Fragment
+- ViewHolder(inner class)
+- Interface
+- LayoutInflate
+
+### Lec5_1
+
 - Navigation
+- Fragment
