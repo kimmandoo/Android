@@ -31,7 +31,11 @@ class ListViewAdapter(val List: MutableList<String>) : BaseAdapter() {
         }
 
         val message = converView!!.findViewById<TextView>(R.id.listViewItem)
+//        val message2 = converView!!.findViewById<TextView>(R.id.listViewItem2)
+
         message.text = List[p0]
+//        message2.text = List[p0].text2
+
 
         return converView!!
     }

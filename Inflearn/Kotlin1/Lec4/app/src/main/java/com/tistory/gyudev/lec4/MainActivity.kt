@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         val listView = findViewById<ListView>(R.id.listView)
         listView.adapter = listAdapter
 
+        listView.setOnItemClickListener { adapterView, view, i, l ->
+            Toast.makeText(this, testList[i], Toast.LENGTH_SHORT).show()
+        }
+
 
     }
 
