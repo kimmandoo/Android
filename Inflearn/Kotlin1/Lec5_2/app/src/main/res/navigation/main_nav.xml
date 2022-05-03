@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/singFragment1">
+
+    <fragment
+        android:id="@+id/singFragment1"
+        android:name="com.tistory.gyudev.lec5_2.singFragment1"
+        android:label="fragment_sing1"
+        tools:layout="@layout/fragment_sing1" >
+        <action
+            android:id="@+id/action_singFragment1_to_singFragment2"
+            app:destination="@id/singFragment2" />
+        <action
+            android:id="@+id/action_singFragment1_to_singFragment3"
+            app:destination="@id/singFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/singFragment2"
+        android:name="com.tistory.gyudev.lec5_2.singFragment2"
+        android:label="fragment_sing2"
+        tools:layout="@layout/fragment_sing2" >
+        <action
+            android:id="@+id/action_singFragment2_to_singFragment1"
+            app:destination="@id/singFragment1" />
+        <action
+            android:id="@+id/action_singFragment2_to_singFragment3"
+            app:destination="@id/singFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/singFragment3"
+        android:name="com.tistory.gyudev.lec5_2.singFragment3"
+        android:label="fragment_sing3"
+        tools:layout="@layout/fragment_sing3" >
+        <action
+            android:id="@+id/action_singFragment3_to_singFragment1"
+            app:destination="@id/singFragment1" />
+        <action
+            android:id="@+id/action_singFragment3_to_singFragment2"
+            app:destination="@id/singFragment2" />
+    </fragment>
+</navigation>
