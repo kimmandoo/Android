@@ -6,7 +6,7 @@
 - ImageView
 - Toast
 - setOnClickListener
-- Intent(단순 액티비티 전환)
+- Intent
 
 ### Lec2
 
@@ -44,5 +44,14 @@
 
 ### Lec5_1
 
+- Navigation
+- Fragment
+
+### Lec5_2
+
+- RecyclerView
+- ViewHolder(inner class)
+- Interface
+- LayoutInflate
 - Navigation
 - Fragment
