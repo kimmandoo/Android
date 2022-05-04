@@ -55,3 +55,11 @@
 - LayoutInflate
 - Navigation
 - Fragment
+
+### Lec6
+
+- Firebase(Log-in Test) -> AnonymousAuth
+
+### Lec6_1
+
+- Firebase(Log-in Test) -> E-mail Auth
