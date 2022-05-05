@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "543073727727",
+    "project_id": "lec6-2",
+    "storage_bucket": "lec6-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543073727727:android:085677444764b282a8971a",
+        "android_client_info": {
+          "package_name": "com.tistory.gyudev.lec6_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543073727727-e0so9pcbq5cqsqcbmvsde5i5rg38q5at.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0AAOeg5doJKWrPmmjONPadhaWjF6meA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543073727727-e0so9pcbq5cqsqcbmvsde5i5rg38q5at.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

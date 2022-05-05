@@ -63,3 +63,8 @@
 ### Lec6_1
 
 - Firebase(Log-in Test) -> E-mail Auth
+
+### Lec6_2
+
+- Splash Screen
+- Firebase auth & Realtime DB
