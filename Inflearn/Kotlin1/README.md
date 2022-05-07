@@ -1,4 +1,4 @@
-# Inflearn강의를 듣고 복습한 기록을 남기는 repo입니다 
+# Inflearn강의를 듣고 복습한 기록을 남기는 repo입니다
 
 ### Lec1
 
@@ -68,3 +68,14 @@
 
 - Splash Screen
 - Firebase auth & Realtime DB
+- Dialog
+- ListView / Adapter
+
+### Lec7
+
+- WebView
+- Firebase auth & Realtime DB(using currentUser UID)
+- Glide & manifest permission
+- Widget Radius
+- LayoutManager -> linear, grid
+
