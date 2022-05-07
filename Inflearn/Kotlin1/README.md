@@ -78,4 +78,4 @@
 - Glide & manifest permission
 - Widget Radius
 - LayoutManager -> linear, grid
-
+- CardView
