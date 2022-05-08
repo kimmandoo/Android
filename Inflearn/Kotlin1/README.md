@@ -79,3 +79,11 @@
 - Widget Radius
 - LayoutManager -> linear, grid
 - CardView
+
+### Lec8
+
+- DatePicker
+- Calendar
+- CardView
+- TimeUnit 
+
