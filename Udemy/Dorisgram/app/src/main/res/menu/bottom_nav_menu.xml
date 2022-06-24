@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_home"
+        android:icon="@drawable/selector_menu_home"
+        android:checked="true"
+        android:title="@string/tab_home" />
+    <item
+        android:id="@+id/tab_search"
+        android:checked="false"
+        android:icon="@drawable/selector_menu_search"
+        android:title="@string/tab_search" />
+    <item
+        android:id="@+id/tab_upload"
+        android:checked="false"
+        android:icon="@drawable/selector_menu_upload"
+        android:title="@string/tab_upload" />
+    <item
+        android:id="@+id/tab_heart"
+        android:checked="false"
+        android:icon="@drawable/selector_menu_heart"
+        android:title="@string/tab_heart" />
+    <item
+        android:id="@+id/tab_mypage"
+        android:checked="false"
+        android:icon="@drawable/selector_menu_mypage"
+        android:title="@string/tab_mypage" />
+
+</menu>

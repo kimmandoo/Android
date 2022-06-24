@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/drawable-v24/bg_radius_round_grey.xml" value="0.193" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/drawable-v24/selector_menu_heart.xml" value="0.193" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/drawable-v24/selector_menu_home.xml" value="0.193" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/drawable-v24/selector_menu_search.xml" value="0.193" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/layout/activity_main.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/layout/activity_upload.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/layout/fragment_mypage.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/layout/fragmet_heart.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/layout/fragmet_home.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/layout/fragmet_search.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/mingy/Documents/Android/Udemy/Dorisgram/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.193" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
