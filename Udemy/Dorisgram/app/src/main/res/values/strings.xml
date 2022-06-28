@@ -16,5 +16,7 @@
     <!-- Search -->
     <string name="search_text">검색</string>
     <string name="search_recent">최근 검색</string>
-
+<!--    Upload-->
+    <string name="upload_new">새 게시물</string>
+    <string name="upload_detail">문구 입력...</string>
 </resources>
