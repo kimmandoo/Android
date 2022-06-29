@@ -6,6 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.ktx.app
 import com.kimmandoo.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -13,20 +17,10 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private var feedList:ArrayList<Feed> = arrayListOf(
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-        Feed("dory","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800","https://mblogthumb-phinf.pstatic.net/MjAyMDA3MjhfMzcg/MDAxNTk1OTE5OTQ3ODA2.ecxiJRgcYqOwDAodSPyzGb_RluVzfnf7AIF6o97m2XQg.4_8LadIMzCW1yj_ZpavPYxb635t-3aJevVhcIkQXtGQg.JPEG.hyousang/1.jpg?type=w800",2,false, false),
-    )
+    private lateinit var database: DatabaseReference
+
+
+    private var feedList: ArrayList<Feed> = arrayListOf()
 
     private var storyList: ArrayList<Story> = arrayListOf(
         Story("zzaang", ""),
@@ -37,7 +31,8 @@ class HomeFragment : Fragment() {
         Story("zzaang", ""),
         Story("zzaang", ""),
         Story("zzaang", "")
-        )
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,13 +44,43 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val db = Firebase.database
+        database = db.getReference("FeedList")
 
-        binding.homeRvFeed.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val values = snapshot.value as ArrayList<HashMap<String, Any>>?
+                // size가 null 값이면 0을 넣는 엘비스 연산자
+                for (i: Int in 1 until (values?.size ?: 0)) {
+                    val data = values?.get(i)
+                    feedList.add(
+                        Feed(
+                            data?.get("userId").toString(),
+                            data?.get("imageUrl").toString(),
+                            data?.get("profileImageUrl").toString(),
+                            data?.get("likeCount") as Long,
+                            data.get("isLIke") as? Boolean ?: false,
+                            data.get("isBookmark") as? Boolean ?: false
+                        )
+                    )
+                }
+                binding.homeRvFeed.adapter?.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
+
+        binding.homeRvFeed.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         binding.homeRvFeed.adapter = FeedAdapter(activity as MainActivity, feedList)
 
         binding.homeRvFeed.isNestedScrollingEnabled = false
 
-        binding.homeRvStory.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.homeRvStory.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         binding.homeRvStory.adapter = StoryAdapter(activity as MainActivity, storyList)
     }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "317628857042",
+    "project_id": "dorisgram-be2b8",
+    "storage_bucket": "dorisgram-be2b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317628857042:android:84f1ccf1e06201372b0b0b",
+        "android_client_info": {
+          "package_name": "com.kimmandoo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317628857042-i17igne3sh4a5pmna374rpm2scil0usc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKbRXadcQV8lzlreus4vr4S8fjBxsnZfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317628857042-i17igne3sh4a5pmna374rpm2scil0usc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
