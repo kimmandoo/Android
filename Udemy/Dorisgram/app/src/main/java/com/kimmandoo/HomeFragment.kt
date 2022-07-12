@@ -20,7 +20,7 @@ class HomeFragment : Fragment() {
     private lateinit var database: DatabaseReference
 
 
-    private var feedList: ArrayList<Feed> = arrayListOf()
+
 
     private var storyList: ArrayList<Story> = arrayListOf(
         Story("zzaang", ""),
@@ -47,6 +47,20 @@ class HomeFragment : Fragment() {
         val db = Firebase.database
         database = db.getReference("FeedList")
 
+        binding.homeRvStory.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        binding.homeRvStory.adapter = StoryAdapter(activity as MainActivity, storyList)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        binding.homeRvFeed.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+
+        binding.homeRvFeed.isNestedScrollingEnabled = false
+        var feedList = ArrayList<Feed>()
+        binding.homeRvFeed.adapter = FeedAdapter(activity as MainActivity, feedList)
+
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val values = snapshot.value as ArrayList<HashMap<String, Any>>?
@@ -72,15 +86,5 @@ class HomeFragment : Fragment() {
             }
 
         })
-
-        binding.homeRvFeed.layoutManager =
-            LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        binding.homeRvFeed.adapter = FeedAdapter(activity as MainActivity, feedList)
-
-        binding.homeRvFeed.isNestedScrollingEnabled = false
-
-        binding.homeRvStory.layoutManager =
-            LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        binding.homeRvStory.adapter = StoryAdapter(activity as MainActivity, storyList)
     }
 }
