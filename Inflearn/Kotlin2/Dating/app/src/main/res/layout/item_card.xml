@@ -1,11 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="20dp"
+    app:cardElevation="20dp"
     android:layout_height="match_parent">
-    <ImageView
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:id="@+id/item_card_iv"
-        android:src="@drawable/auth_image"
-        android:layout_height="match_parent"/>
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/item_card_iv"
+            android:src="@drawable/auth_image"
+            android:layout_height="500dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/item_card_tv_name"
+            android:text="이름"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/item_card_tv_age"
+            android:text="나이"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/item_card_tv_city"
+            android:text="지역"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/left_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/no"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/right_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ok"/>
+    </FrameLayout>
 
 </androidx.cardview.widget.CardView>
