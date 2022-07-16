@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mingy/Documents/Android/Inflearn/Kotlin2/Dating/app/src/main/res/layout/activity_intro.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/mingy/Documents/Android/Inflearn/Kotlin2/Dating/app/src/main/res/layout/activity_join.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/mingy/Documents/Android/Inflearn/Kotlin2/Dating/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/mingy/Documents/Android/Inflearn/Kotlin2/Dating/app/src/main/res/layout/activity_splash.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/mingy/Documents/Android/Inflearn/Kotlin2/Dating/app/src/main/res/layout/item_card.xml" value="0.18489583333333334" />
       </map>
     </option>
