@@ -1,4 +1,4 @@
-package com.kimmandoo.infinitescroll
+package com.kimmandoo.infinitescroll.Poops
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.kimmandoo.infinitescroll.databinding.RvItemBinding
 import com.kimmandoo.infinitescroll.databinding.RvLoadingBinding
 
-class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class RecyclerViewAdapterFirst : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     private val VIEW_TYPE_ITEM = 0
     private val VIEW_TYPE_LOADING = 1
