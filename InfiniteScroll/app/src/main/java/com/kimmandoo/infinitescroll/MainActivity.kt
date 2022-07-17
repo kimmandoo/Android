@@ -27,8 +27,14 @@ class MainActivity : AppCompatActivity() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 val layoutManager = binding.rv.layoutManager as LinearLayoutManager
+//                if(!isLoading){
+//                    if(layoutManager != null && layoutManager.findLastCompletelyVisibleItemPosition() == testItems.size - 1){
+//                        isLoading = true
+//                        getMoreData()
+//                    }
+//                }
                 if(!isLoading){
-                    if(layoutManager != null && layoutManager.findLastCompletelyVisibleItemPosition() == testItems.size - 1){
+                    if(!binding.rv.canScrollVertically(1)){
                         isLoading = true
                         getMoreData()
                     }
