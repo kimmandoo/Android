@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mingy/Documents/Android/InfiniteScroll/app/src/main/res/layout/rv_item.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/mingy/Documents/Android/InfiniteScroll/app/src/main/res/layout/rv_loading.xml" value="0.2164855072463768" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/rv_item.xml" value="0.2776268115942029" />
         <entry key="app/src/main/res/layout/rv_loading.xml" value="0.2776268115942029" />
