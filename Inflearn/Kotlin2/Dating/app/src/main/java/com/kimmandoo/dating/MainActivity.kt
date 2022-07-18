@@ -1,8 +1,12 @@
 package com.kimmandoo.dating
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.kimmandoo.dating.auth.IntroActivity
 import com.kimmandoo.dating.databinding.ActivityMainBinding
 import com.kimmandoo.dating.slider.CardStackAdapter
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
@@ -18,6 +22,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        binding.settingIcon.setOnClickListener {
+            val auth = Firebase.auth
+            auth.signOut()
+
+            val intent = Intent(this, IntroActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         manager = CardStackLayoutManager(baseContext, object : CardStackListener {
             override fun onCardDragging(direction: Direction?, ratio: Float) {
