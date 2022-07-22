@@ -29,8 +29,12 @@
         android:label="fragment_select"
         tools:layout="@layout/fragment_select" >
         <action
+            app:enterAnim="@anim/nav_default_enter_anim"
             android:id="@+id/action_selectFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_selectFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
