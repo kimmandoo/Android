@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                     if(!binding.rv.canScrollVertically(1)){
                         isLoading = true
                         getMoreData()
+                        //
                     }
                 }
             }
