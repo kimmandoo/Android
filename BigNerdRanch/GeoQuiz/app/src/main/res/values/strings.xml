@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GeoQuiz</string>
+    <string name="toast_o">Correct</string>
+    <string name="toast_x">Incorrect</string>
 </resources>
