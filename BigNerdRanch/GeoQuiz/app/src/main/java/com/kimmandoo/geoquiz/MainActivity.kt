@@ -9,6 +9,15 @@ import com.kimmandoo.geoquiz.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
+    private val questionBank = listOf(
+        Question(R.string.question_asia, true),
+        Question(R.string.question_oceans, true),
+        Question(R.string.question_australia, true)
+    )
+
+    private var currentIndex = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -16,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnTrue.setOnClickListener {
             //api30 over decreaped
             val toast = Toast.makeText(this, R.string.toast_o, Toast.LENGTH_SHORT)
-            toast.setGravity(Gravity.CENTER_VERTICAL,100,0)
+            toast.setGravity(Gravity.CENTER_VERTICAL, 100, 0)
             toast.show()
         }
 

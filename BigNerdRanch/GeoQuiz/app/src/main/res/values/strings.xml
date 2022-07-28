@@ -2,4 +2,7 @@
     <string name="app_name">GeoQuiz</string>
     <string name="toast_o">Correct</string>
     <string name="toast_x">Incorrect</string>
+    <string name="question_australia">호주의 수도는 캔버라이다</string>
+    <string name="question_oceans">태평양은 대서양보다 크다</string>
+    <string name="question_asia">바이칼호수는 세계에서 가장 오래되고 가장 깊은 담수호다</string>
 </resources>
