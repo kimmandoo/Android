@@ -5,8 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <com.google.android.exoplayer2.ui.PlayerView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:id="@+id/video_view"
-        android:layout_height="match_parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        android:layout_height="400dp">
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/video_view"
+            app:use_controller="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.cardview.widget.CardView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
