@@ -3,4 +3,5 @@
 ### GeoQuiz
 
     - Toast Customizing
-    - 
+    - drawbleEnd
+    - MVC pattern

@@ -39,6 +39,17 @@ class MainActivity : AppCompatActivity() {
             currentIndex = (currentIndex + 1) % questionBank.size
             updateQuestion()
         }
+
+        binding.btnPrev.setOnClickListener {
+
+            currentIndex = if(currentIndex - 1 < 0){
+                questionBank.size - 1
+            }else{
+                currentIndex -1
+            }
+            updateQuestion()
+        }
+
         updateQuestion()
     }
     //공통된 건 함수로 뺀다.
