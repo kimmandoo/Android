@@ -9,7 +9,7 @@ import com.kimmandoo.geoquiz.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-
+    private val TAG = "MainActivity"
     private val questionBank = listOf(
         Question(R.string.question_asia, true),
         Question(R.string.question_oceans, true),
