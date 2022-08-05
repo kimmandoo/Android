@@ -5,3 +5,4 @@
     - Toast Customizing
     - drawbleEnd
     - MVC pattern
+    - MVVM (ViewModel)

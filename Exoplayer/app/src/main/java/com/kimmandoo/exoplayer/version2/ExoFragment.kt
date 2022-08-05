@@ -1,4 +1,4 @@
-package com.kimmandoo.exoplayer.recyclerview.version2
+package com.kimmandoo.exoplayer.version2
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

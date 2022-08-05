@@ -1,9 +1,9 @@
-package com.kimmandoo.exoplayer.recyclerview.version2
+package com.kimmandoo.exoplayer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.kimmandoo.exoplayer.R
 import com.kimmandoo.exoplayer.databinding.ActivityContainerBinding
+import com.kimmandoo.exoplayer.version2.ExoFragment
 
 class ContainerActivity : AppCompatActivity() {
     val binding by lazy {ActivityContainerBinding.inflate(layoutInflater)}
