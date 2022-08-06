@@ -6,3 +6,4 @@
     - drawbleEnd
     - MVC pattern
     - MVVM (ViewModel)
+    - SIS(Saved Instance State)
