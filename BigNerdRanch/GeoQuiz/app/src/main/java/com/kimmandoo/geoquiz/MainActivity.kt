@@ -2,21 +2,31 @@ package com.kimmandoo.geoquiz
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.Gravity
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.kimmandoo.geoquiz.databinding.ActivityMainBinding
 
+private const val KEY_INDEX = "index"
+
 class MainActivity : AppCompatActivity() {
 
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val TAG = "MainActivity"
     private val quizViewModel by lazy { ViewModelProvider(this).get(QuizViewModel::class.java) }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d(TAG, "SIS")
+        outState.putInt(KEY_INDEX, quizViewModel.currentIndex)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        val currentIndex = savedInstanceState?.getInt(KEY_INDEX, 0) ?: 0
+
 
         //viewmodel link code 위에서 lazy 처리함. 인스턴스를 보존하기 위해 늦게 초기화시키는 것. quizViewModel이 사용될 때 까지 초기화시점을 늦춘다.
 //        val provider = ViewModelProvider(this)
