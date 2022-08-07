@@ -23,6 +23,7 @@ class SomeFancyViewModel: ViewModel() {
 
     val currentQuestionAnswer get() = questionBank[currentIndex].answer
     val currentQuestionText get() = questionBank[currentIndex].textResId
+
     fun moveToNext(){
         currentIndex = (currentIndex + 1)% questionBank.size
     }
