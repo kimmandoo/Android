@@ -93,7 +93,6 @@ class RvAdapter(val context: Context, val items: MutableList<String>) : Recycler
                     exoPlayer.prepare()
                 }
         }
-
     }
 //RecyclerView.ViewHolder, viewType 받아서 지정하는게 정석
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {

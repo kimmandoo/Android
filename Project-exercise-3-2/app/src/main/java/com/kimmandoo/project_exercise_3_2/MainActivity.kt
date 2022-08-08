@@ -2,8 +2,10 @@ package com.kimmandoo.project_exercise_3_2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import com.kimmandoo.project_exercise_3_2.databinding.ActivityMainBinding
 import com.kimmandoo.project_exercise_3_2.feature1.FeatureOneFragment
+import com.kimmandoo.project_exercise_3_2.feature1.FeatureOneViewModel
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
