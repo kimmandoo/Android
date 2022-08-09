@@ -16,4 +16,14 @@ class FeatureOneViewModel : ViewModel() {
         Ingredient("감자", 1)
     )
 
+    val toolList = mutableListOf(
+        Ingredient("후라이팬"),
+        Ingredient("냄비", 0),
+        Ingredient("주걱", 0),
+        Ingredient("국자", 0),
+        Ingredient("집게", 0),
+        Ingredient("채", 0),
+        Ingredient("탐침온도계", 0),
+    )
+
 }
