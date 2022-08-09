@@ -41,10 +41,13 @@ class FeatureTwoFragment : Fragment() {
         val retrofit = Retrofit.Builder()
             .baseUrl("http://jaeryurp.duckdns.org:40131/")
             .addConverterFactory(ScalarsConverterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create(gson))
+//            .addConverterFactory(GsonConverterFactory.create(gson)) //있으나마나한 코드...
             .build()
         val api = retrofit.create(UserAPI::class.java)
         //원래는 getResult에 query 넣어야됨
+        /*이슈가 있음.
+        * 원래 json파일이 response body로 와야되는데 웹 태그(<pre></pre>)가 붙어서 나옴. substring으로 jsonString으로 강제로 만들어서 바꿈
+        * */
         val callResult = api.getResult()
         lateinit var jsonString : String
         callResult.enqueue(object : Callback<String> {
