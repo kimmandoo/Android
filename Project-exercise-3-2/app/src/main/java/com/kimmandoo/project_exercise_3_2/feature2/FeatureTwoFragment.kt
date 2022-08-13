@@ -7,19 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.gson.GsonBuilder
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import com.kimmandoo.project_exercise_3_2.databinding.FragmentFeatureTwoBinding
 import org.json.JSONArray
-import org.json.JSONObject
 import org.json.JSONTokener
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 
 class FeatureTwoFragment : Fragment() {
+
     private val serviceKey = "Cname"
     private var _binding: FragmentFeatureTwoBinding? = null
     private val binding get() = _binding!!
@@ -43,20 +44,19 @@ class FeatureTwoFragment : Fragment() {
             .addConverterFactory(ScalarsConverterFactory.create())
 //            .addConverterFactory(GsonConverterFactory.create(gson)) //있으나마나한 코드...
             .build()
-        val api = retrofit.create(UserAPI::class.java)
+        val api = retrofit.create(IngredientExpAPI::class.java)
         //원래는 getResult에 query 넣어야됨
         /*이슈가 있음.
         * 원래 json파일이 response body로 와야되는데 웹 태그(<pre></pre>)가 붙어서 나옴. substring으로 jsonString으로 강제로 만들어서 바꿈
         * */
         val callResult = api.getResult()
         lateinit var jsonString : String
-        callResult.enqueue(object : Callback<String> {
+        callResult.enqueue(object : Callback<JsonArray> {
             override fun onResponse(
-                call: Call<String>,
-                response: Response<String>
+                call: Call<JsonArray>,
+                response: Response<JsonArray>
             ) {
                 Log.d("FeatTwo", "성공 : ${response.body()}")
-                jsonString = response.body()!!.substring(5, response.body()!!.length-7)
                 Log.d("FeatTwo", "json : ${jsonString}")
 
                 val items = mutableListOf<Test>()
@@ -79,10 +79,11 @@ class FeatureTwoFragment : Fragment() {
 
             }
 
-            override fun onFailure(call: Call<String>, t: Throwable) {
+            override fun onFailure(call: Call<JsonArray>, t: Throwable) {
                 Log.d("FeatTwo", "실패 : $t")
             }
         })
+
 
     }
 }
