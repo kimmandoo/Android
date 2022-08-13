@@ -14,9 +14,9 @@ interface IngredientExpAPI {
 //        @Query("query") userName: String
     ): Call<JsonArray>
 
-    @GET("/update/update_ingredient.php?Uingredient=onion&")
+    @GET("/update/update_ingredient.php?")
     fun minusOne(
-//        @Query("Uingredient") Uingredient: String,
+        @Query("Uingredient") Uingredient: String,
         @Query("Ucnt") Ucnt: String,
     ): Call<JsonArray>
 }
