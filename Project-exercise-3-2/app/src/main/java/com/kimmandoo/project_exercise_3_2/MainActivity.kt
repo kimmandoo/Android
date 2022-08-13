@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(container, FeatureOneFragment()).commitAllowingStateLoss()
         }
         binding.btnFun2.setOnClickListener {
-            supportFragmentManager.beginTransaction().replace(container, FeatureTwoTwoFragment()).commitAllowingStateLoss()
+            supportFragmentManager.beginTransaction().replace(container, FeatureTwoFragment()).commitAllowingStateLoss()
         }
 
 

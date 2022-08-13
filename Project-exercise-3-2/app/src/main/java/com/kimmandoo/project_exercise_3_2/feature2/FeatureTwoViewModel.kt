@@ -63,7 +63,7 @@ class FeatureTwoViewModel: ViewModel() {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
         val api = retrofit.create(IngredientExpAPI::class.java)
-        val callResult = api.getResult()
+        val callResult = api.getResult("onion")
 
         var resultJsonArray : JsonArray?
 
@@ -102,7 +102,7 @@ class FeatureTwoViewModel: ViewModel() {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
         val api = retrofit.create(IngredientExpAPI::class.java)
-        val callResult = api.minusOne()
+        val callResult = api.minusOne("1")
 
         var resultJsonArray : JsonArray?
 

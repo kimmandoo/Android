@@ -16,6 +16,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 
@@ -41,26 +42,28 @@ class FeatureTwoFragment : Fragment() {
         var gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit.Builder()
             .baseUrl("http://jaeryurp.duckdns.org:40131/")
-            .addConverterFactory(ScalarsConverterFactory.create())
-//            .addConverterFactory(GsonConverterFactory.create(gson)) //있으나마나한 코드...
+//            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson)) //있으나마나한 코드...
             .build()
-        val api = retrofit.create(IngredientExpAPI::class.java)
+        val api = retrofit.create(TestAPI::class.java)
         //원래는 getResult에 query 넣어야됨
         /*이슈가 있음.
         * 원래 json파일이 response body로 와야되는데 웹 태그(<pre></pre>)가 붙어서 나옴. substring으로 jsonString으로 강제로 만들어서 바꿈
         * */
         val callResult = api.getResult()
-        lateinit var jsonString : String
+        var resultJsonArray : JsonArray?
+
         callResult.enqueue(object : Callback<JsonArray> {
             override fun onResponse(
                 call: Call<JsonArray>,
                 response: Response<JsonArray>
             ) {
                 Log.d("FeatTwo", "성공 : ${response.body()}")
-                Log.d("FeatTwo", "json : ${jsonString}")
+                resultJsonArray = response.body()
+                Log.d("FeatTwo", "json : ${resultJsonArray.toString()}")
 
                 val items = mutableListOf<Test>()
-                val jsonArray = JSONTokener(jsonString).nextValue() as JSONArray
+                val jsonArray = JSONTokener(resultJsonArray.toString()).nextValue() as JSONArray
                 for (i in 0 until jsonArray.length()) {
                     val name = jsonArray.getJSONObject(i).getString("name")
                     val chief = jsonArray.getJSONObject(i).getString("chief")
