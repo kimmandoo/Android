@@ -35,7 +35,7 @@ class ListAdapter(private val list: MutableList<IngredientList>): RecyclerView.A
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if(holder is ItemViewHolder){
-            if(itemClick != null && list[position].name == "onion"){
+            if(itemClick != null){
                 holder.item.setOnClickListener{v->
                     itemClick!!.onClick(v, position)
 

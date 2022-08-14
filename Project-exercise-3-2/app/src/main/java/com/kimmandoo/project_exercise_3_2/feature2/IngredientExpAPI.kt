@@ -8,9 +8,12 @@ import retrofit2.http.Header
 import retrofit2.http.Query
 
 interface IngredientExpAPI {
-    @GET("/show/show_table2.php?")
+//    @GET("/show/show_table2.php?")
+    @GET("/update/update_ingredient.php?")
     fun getResult(
-        @Query("Sname") Sname: String,
+//        @Query("Sname") Sname: String,
+        @Query("Uingredient") Uingredient: String,
+        @Query("Ucnt") Ucnt: String,
 //        @Query("query") userName: String
     ): Call<JsonArray>
 

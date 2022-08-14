@@ -15,6 +15,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kimmandoo.project_exercise_3_2.databinding.FragmentFeatureTwoTwoBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class FeatureTwoTwoFragment : Fragment() {
@@ -45,15 +49,19 @@ class FeatureTwoTwoFragment : Fragment() {
         }
 
         featureTwoViewModel.retrofitList(listAdapter)
-        featureTwoViewModel.retrofitExp()
 
         listAdapter.itemClick = object : ListAdapter.ItemClick{
             override fun onClick(view: View, position: Int) {
 //                featureTwoViewModel.retrofitExp()
-                val intent = Intent(context, ExpItemActivity::class.java)
-                intent.putExtra("count",featureTwoViewModel.ingredientExp[2].count)
-                intent.putExtra("exp",featureTwoViewModel.ingredientExp[2].expiration)
-                startActivityForResult(intent, 0)
+                CoroutineScope(Dispatchers.Main).launch {
+                    featureTwoViewModel.retrofitExp(featureTwoViewModel.ingredientList[position].name)
+                    delay(100)
+                    val intent = Intent(context, ExpItemActivity::class.java)
+                    intent.putExtra("name",featureTwoViewModel.ingredientList[position].name)
+                    intent.putExtra("count",featureTwoViewModel.ingredientExp[2].count)
+                    intent.putExtra("exp",featureTwoViewModel.ingredientExp[2].expiration)
+                    startActivityForResult(intent, 0)
+                }
             }
         }
         listAdapter.minusClick = object : ListAdapter.ItemClick{
@@ -75,8 +83,9 @@ class FeatureTwoTwoFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK) {
             //refresh exp page
-            featureTwoViewModel.retrofitExp()
-            Log.d("resultCode", "refreshed")
+            val name = data?.getStringExtra("ingredientName")
+            featureTwoViewModel.retrofitExp(name!!)
+            Log.d("resultCode", "refreshed $name")
         }
     }
 }

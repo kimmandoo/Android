@@ -16,8 +16,10 @@ class ExpItemActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        val name = intent.getStringExtra("name")
         val count = intent.getStringExtra("count")
         val exp = intent.getStringExtra("exp")
+        binding.itemTvName.text = name + "의 유통기간"
         binding.itemTvCount.text = count + "개"
         binding.itemTvExp.text = exp + "까지 보관가능"
 
@@ -33,6 +35,7 @@ class ExpItemActivity : AppCompatActivity() {
                 applicationContext,
                 FeatureTwoTwoFragment::class.java
             )
+            outIntent.putExtra("ingredientName",name)
             setResult(RESULT_OK, outIntent)
             finish()
         }

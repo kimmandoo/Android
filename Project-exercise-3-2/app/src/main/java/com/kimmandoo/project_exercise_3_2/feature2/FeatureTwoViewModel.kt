@@ -1,7 +1,6 @@
 package com.kimmandoo.project_exercise_3_2.feature2
 
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonArray
@@ -12,7 +11,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import kotlin.math.exp
 
 class FeatureTwoViewModel: ViewModel() {
     val ingredientList = mutableListOf<IngredientList>()
@@ -55,7 +53,7 @@ class FeatureTwoViewModel: ViewModel() {
         })
     }
 
-    fun retrofitExp(){
+    fun retrofitExp(ingredientName: String){
         var gson = GsonBuilder().setLenient().create()
 
         val retrofit = Retrofit.Builder()
@@ -63,7 +61,7 @@ class FeatureTwoViewModel: ViewModel() {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
         val api = retrofit.create(IngredientExpAPI::class.java)
-        val callResult = api.getResult("onion")
+        val callResult = api.getResult(ingredientName,"0")
 
         var resultJsonArray : JsonArray?
 
@@ -81,11 +79,12 @@ class FeatureTwoViewModel: ViewModel() {
                     val exp = jsonArray.getJSONObject(i).getString("expiration")
                     if(!expRefresh){
                         ingredientExp.add(IngredientExp(count, exp))
+                        Log.d("Exp genlog","${ingredientExp[i]}")
                     }else{
                         ingredientExp[i] = IngredientExp(count, exp)
+                        Log.d("Exp genlog","${ingredientExp[i]}")
                     }
                 }
-                Log.d("List","${ingredientExp[2]}")
                 expRefresh = true
             }
 
