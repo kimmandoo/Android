@@ -57,10 +57,22 @@ class FeatureTwoTwoFragment : Fragment() {
                     featureTwoViewModel.retrofitExp(featureTwoViewModel.ingredientList[position].name)
                     delay(100)
                     val intent = Intent(context, ExpItemActivity::class.java)
-                    intent.putExtra("name",featureTwoViewModel.ingredientList[position].name)
-                    intent.putExtra("count",featureTwoViewModel.ingredientExp[2].count)
-                    intent.putExtra("exp",featureTwoViewModel.ingredientExp[2].expiration)
-                    startActivityForResult(intent, 0)
+                    if(featureTwoViewModel.ingredientList[position].name.contains("meat")){
+                        val meatName = featureTwoViewModel.ingredientList[position].name.substring(5,)
+                        intent.putExtra("name",meatName)
+                    }else{
+                        intent.putExtra("name",featureTwoViewModel.ingredientList[position].name)
+                    }
+                    if(featureTwoViewModel.ingredientExp.size < 2){
+                        intent.putExtra("count",featureTwoViewModel.ingredientExp[0].count)
+                        intent.putExtra("exp",featureTwoViewModel.ingredientExp[0].expiration)
+                        startActivityForResult(intent, 0)
+                    }else{
+                        intent.putExtra("count",featureTwoViewModel.ingredientExp[2].count)
+                        intent.putExtra("exp",featureTwoViewModel.ingredientExp[2].expiration)
+                        startActivityForResult(intent, 0)
+                    }
+
                 }
             }
         }
