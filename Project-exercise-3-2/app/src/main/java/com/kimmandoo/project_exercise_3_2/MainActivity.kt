@@ -9,6 +9,7 @@ import com.kimmandoo.project_exercise_3_2.feature1.FeatureOneViewModel
 import com.kimmandoo.project_exercise_3_2.feature2.FeatureTwoFragment
 import com.kimmandoo.project_exercise_3_2.feature2.FeatureTwoTwoFragment
 import com.kimmandoo.project_exercise_3_2.feature3.RoomFragment
+import com.kimmandoo.project_exercise_3_2.feature4.AlertFragment
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnFun3.setOnClickListener {
             supportFragmentManager.beginTransaction().replace(container, RoomFragment()).commitAllowingStateLoss()
+        }
+        binding.btnFun4.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(container, AlertFragment()).commitAllowingStateLoss()
         }
 
     }

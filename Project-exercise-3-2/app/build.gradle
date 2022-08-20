@@ -40,6 +40,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
+
     def room_version = "2.4.2"
     kapt "androidx.room:room-compiler:2.4.2"
     //RoomHelper_Impl does not exist 오류 해결
