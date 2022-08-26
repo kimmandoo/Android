@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
 //        helper = Room.databaseBuilder(this, RoomHelper::class.java,"roomDB")
 //            .allowMainThreadQueries() // 중요. 공부할 때만 사용하는 것. 룸은 원래 메인스레드에서 돌지 않음 -> 접근 시간을 특정할수 없어서 main에서 못돌림.
 //            .build()

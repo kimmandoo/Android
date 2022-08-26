@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
-import com.kimmandoo.project_exercise_3_2.R
-import com.kimmandoo.project_exercise_3_2.databinding.FragmentFeatureTwoTwoBinding
 import com.kimmandoo.project_exercise_3_2.databinding.FragmentRoomBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -56,7 +54,7 @@ class RoomFragment : Fragment() {
 //                    helper.ingredientDao().insert(data)
 //                    refreshAdapter()
                     editMemo.setText("") //입력창을 지워주는 것 (DB에 추가가 됐다면)
-                    insertMemo(data)
+                    insertData(data)
 
                     //data가 많을때는 중복제거를 넣어줌
 //                    dbList.clear()
@@ -71,7 +69,7 @@ class RoomFragment : Fragment() {
 
     }
 
-    fun insertMemo(data: IngredientDb){
+    fun insertData(data: IngredientDb){
         CoroutineScope(Dispatchers.IO).launch {
             helper.ingredientDao().insert(data)
 //            withContext(Dispatchers.Main){

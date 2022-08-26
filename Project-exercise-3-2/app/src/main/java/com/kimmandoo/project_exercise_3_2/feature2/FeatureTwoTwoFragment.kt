@@ -55,8 +55,9 @@ class FeatureTwoTwoFragment : Fragment() {
 //                featureTwoViewModel.retrofitExp()
                 CoroutineScope(Dispatchers.Main).launch {
                     featureTwoViewModel.retrofitExp(featureTwoViewModel.ingredientList[position].name)
-                    delay(100)
+                    delay(200)
                     val intent = Intent(context, ExpItemActivity::class.java)
+                    Log.d("Expitem", "${featureTwoViewModel.ingredientExp}")
                     if(featureTwoViewModel.ingredientList[position].name.contains("meat")){
                         val meatName = featureTwoViewModel.ingredientList[position].name.substring(5,)
                         intent.putExtra("name",meatName)

@@ -6,10 +6,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.kimmandoo.project_exercise_3_2.databinding.ActivityMainBinding
 import com.kimmandoo.project_exercise_3_2.feature1.FeatureOneFragment
 import com.kimmandoo.project_exercise_3_2.feature1.FeatureOneViewModel
+import com.kimmandoo.project_exercise_3_2.feature1_1.ToolFragment
 import com.kimmandoo.project_exercise_3_2.feature2.FeatureTwoFragment
 import com.kimmandoo.project_exercise_3_2.feature2.FeatureTwoTwoFragment
 import com.kimmandoo.project_exercise_3_2.feature3.RoomFragment
 import com.kimmandoo.project_exercise_3_2.feature4.AlertFragment
+import com.kimmandoo.project_exercise_3_2.feature_test.Test2API
+import com.kimmandoo.project_exercise_3_2.feature_test.TestFragment
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
@@ -20,8 +23,11 @@ class MainActivity : AppCompatActivity() {
         container = binding.container.id
 
         binding.btnFun1.setOnClickListener {
-            supportFragmentManager.beginTransaction().replace(container, FeatureOneFragment()).commitAllowingStateLoss()
+//            supportFragmentManager.beginTransaction().replace(container, FeatureOneFragment()).commitAllowingStateLoss()
+            supportFragmentManager.beginTransaction().replace(container, ToolFragment()).commitAllowingStateLoss()
+
         }
+
         binding.btnFun2.setOnClickListener {
             supportFragmentManager.beginTransaction().replace(container, FeatureTwoTwoFragment()).commitAllowingStateLoss()
         }
@@ -30,6 +36,10 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnFun4.setOnClickListener {
             supportFragmentManager.beginTransaction().replace(container, AlertFragment()).commitAllowingStateLoss()
+        }
+        binding.btnFun5.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(container, TestFragment()).commitAllowingStateLoss()
+
         }
 
     }
