@@ -11,6 +11,7 @@ import com.kimmandoo.project_exercise_3_2.feature2.FeatureTwoFragment
 import com.kimmandoo.project_exercise_3_2.feature2.FeatureTwoTwoFragment
 import com.kimmandoo.project_exercise_3_2.feature3.RoomFragment
 import com.kimmandoo.project_exercise_3_2.feature4.AlertFragment
+import com.kimmandoo.project_exercise_3_2.feature_room_exp.RoomExpFragment
 import com.kimmandoo.project_exercise_3_2.feature_test.Test2API
 import com.kimmandoo.project_exercise_3_2.feature_test.TestFragment
 
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(container, AlertFragment()).commitAllowingStateLoss()
         }
         binding.btnFun5.setOnClickListener {
-            supportFragmentManager.beginTransaction().replace(container, TestFragment()).commitAllowingStateLoss()
+            supportFragmentManager.beginTransaction().replace(container, RoomExpFragment()).commitAllowingStateLoss()
 
         }
 
