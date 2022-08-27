@@ -94,7 +94,7 @@ class FeatureTwoViewModel: ViewModel() {
         })
     }
 
-    fun retrofitCountDelete(){
+    fun retrofitCountDelete(Uingredient: String){
         var gson = GsonBuilder().setLenient().create()
         val retrofit = Retrofit.Builder()
             .baseUrl("http://jaeryurp.duckdns.org:40131/")
@@ -102,7 +102,7 @@ class FeatureTwoViewModel: ViewModel() {
             .build()
         val api = retrofit.create(IngredientExpAPI::class.java)
 
-        val callResult = api.minusOne("onion","1")
+        val callResult = api.minusOne(Uingredient,"1")
 
         var resultJsonArray : JsonArray?
 
@@ -124,7 +124,7 @@ class FeatureTwoViewModel: ViewModel() {
                         ingredientExp[i] = IngredientExp(count, exp)
                     }
                 }
-                Log.d("List","${ingredientExp[2]}")
+                Log.d("List","${ingredientExp[ingredientExp.size-1]}")
                 getDeleteSign = true
             }
 

@@ -69,6 +69,17 @@ class RoomExpFragment : Fragment() {
 
         binding.featExpRv.adapter = dbAdapter
         binding.featExpRv.layoutManager = LinearLayoutManager(context)
+
+        binding.refresh.setOnClickListener {
+            expRoomDbBuild()
+        }
+
+        //list에 exp가 있다면
+//        val data = RoomExpDB("name","1","2022-08-26")
+//        insertData(data)
+    }
+
+    fun expRoomDbBuild(){
         //list를 먼저 받고, exp를 받아서 list에 exp가 있으면 name-count-exp순으로 앱 내부 db에 저장한다.
         //list받기
         var gson = GsonBuilder().setLenient().create()
@@ -131,9 +142,6 @@ class RoomExpFragment : Fragment() {
             }
         })
 
-        //list에 exp가 있다면
-//        val data = RoomExpDB("name","1","2022-08-26")
-//        insertData(data)
     }
 
     fun insertData(data: RoomExpDB){
@@ -150,6 +158,10 @@ class RoomExpFragment : Fragment() {
         CoroutineScope(Dispatchers.IO).launch {
             dbList.clear()
             dbList.addAll(helper.roomExpDao().getAll())
+            //RoomDb가 존재하지 않으면 build하도록
+            if (dbList.size == 0){
+                expRoomDbBuild()
+            }
             withContext(Dispatchers.Main) {
                 dbAdapter.notifyDataSetChanged()
             }
