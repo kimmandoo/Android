@@ -54,6 +54,13 @@ class RoomExpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        /*Coroutine으로 roomDB에 접근할수 있음(그 전에 roomDB가 생성되어있어야됨)
+        CoroutineScope(Dispatchers.IO).launch {
+        dbList.addAll(helper.roomExpDao().getAll())
+        }
+        */
+
         helper = Room.databaseBuilder(requireContext(), RoomHelper::class.java, "roomexpDb")
             .build()
         dbAdapter = ExpDBAdapter(dbList)
