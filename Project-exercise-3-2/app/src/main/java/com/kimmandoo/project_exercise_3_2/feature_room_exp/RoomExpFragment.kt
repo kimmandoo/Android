@@ -54,7 +54,7 @@ class RoomExpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        helper = Room.databaseBuilder(requireContext(), RoomHelper::class.java, "roomexpDB")
+        helper = Room.databaseBuilder(requireContext(), RoomHelper::class.java, "roomexpDb")
             .build()
         dbAdapter = ExpDBAdapter(dbList)
         dbList.clear()
@@ -104,6 +104,8 @@ class RoomExpFragment : Fragment() {
                                 val exp = expArray.getJSONObject(expArray.length()-1).getString("expiration")
                                 Log.d("DB","${i},${count},${exp}")
                                 insertData(RoomExpDB(i,count,exp))// 추가하는 것 까지 완성
+                                refreshAdapter()
+
                                 // 이미 있으면 replace나 add 하지 않는 방법으로 적용할 예정
                             }else{
 //                                Log.d("EXP Null","${responseExp.body()}")
