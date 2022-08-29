@@ -1,12 +1,12 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 1,
-    "identityHash": "4e405d1dc2fcb32eeca349180d484858",
+    "version": 4,
+    "identityHash": "b992cd91c3af299428707403e77a8e43",
     "entities": [
       {
-        "tableName": "roomexpdb",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `count` TEXT NOT NULL, `expiration` TEXT NOT NULL, `keyValue` TEXT NOT NULL DEFAULT 'default', PRIMARY KEY(`name`, `expiration`, `keyValue`))",
+        "tableName": "roomexpDb",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `count` TEXT NOT NULL, `expiration` TEXT NOT NULL, `keyValue` TEXT NOT NULL DEFAULT '1', PRIMARY KEY(`name`, `expiration`, `keyValue`))",
         "fields": [
           {
             "fieldPath": "name",
@@ -31,7 +31,7 @@
             "columnName": "keyValue",
             "affinity": "TEXT",
             "notNull": true,
-            "defaultValue": "'default'"
+            "defaultValue": "'1'"
           }
         ],
         "primaryKey": {
@@ -49,7 +49,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4e405d1dc2fcb32eeca349180d484858')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b992cd91c3af299428707403e77a8e43')"
     ]
   }
 }

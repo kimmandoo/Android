@@ -102,7 +102,7 @@ class FeatureTwoViewModel: ViewModel() {
             .build()
         val api = retrofit.create(IngredientExpAPI::class.java)
 
-        val callResult = api.minusOne(Uingredient,"1","2022-08-13")
+        val callResult = api.minusOne(Uingredient,"1","2022-08-30")
 
         var resultJsonArray : JsonArray?
 

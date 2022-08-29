@@ -26,7 +26,7 @@ class ExpItemActivity : AppCompatActivity() {
         binding.itemIvMinus.setOnClickListener {
             CoroutineScope(Dispatchers.Main).launch {
                 featureTwoViewModel.retrofitCountDelete(name!!)
-                delay(300)
+                delay(30)
                 binding.itemTvCount.text = featureTwoViewModel.ingredientExp[featureTwoViewModel.ingredientExp.size-1].count + "개"
             }
         }

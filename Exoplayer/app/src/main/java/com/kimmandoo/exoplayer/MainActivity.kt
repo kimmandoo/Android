@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             .build()
             .also { exoPlayer ->
                 binding.videoView.player = exoPlayer
-                val mediaItem = MediaItem.fromUri(getString(R.string.sample_video))
+                val mediaItem = MediaItem.fromUri(getString(R.string.sample_video2))
                 exoPlayer.setMediaItem(mediaItem)
                 exoPlayer.playWhenReady = playWhenReady
                 exoPlayer.seekTo(currentWindow, playbackPosition)

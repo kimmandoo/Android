@@ -58,7 +58,7 @@ class RoomExpFragment : Fragment() {
         }
         */
 
-        helper = Room.databaseBuilder(requireContext(), RoomHelper::class.java, "roomexpDb")
+        helper = Room.databaseBuilder(requireContext(), RoomHelper::class.java, "roomexpdb")
             .build()
         dbAdapter = ExpDBAdapter(dbList)
         dbList.clear()
@@ -125,8 +125,10 @@ class RoomExpFragment : Fragment() {
                                 for (item in 0 until expArray.length()) {
                                     val count = expArray.getJSONObject(item).getString("count")
                                     val exp = expArray.getJSONObject(item).getString("expiration")
-                                    Log.d("DB", "${i},${count},${exp}")
-                                    insertData(RoomExpDB(i, count, exp))
+                                    val keyValue = expArray.getJSONObject(item).getString("keyvalue")
+
+                                    Log.d("DB", "${i},${count},${exp},${keyValue}")
+                                    insertData(RoomExpDB(i, count, exp, keyValue))
 //                                    refreshAdapter()
                                 }
                                 refreshAdapter()
