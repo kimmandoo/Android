@@ -14,6 +14,7 @@ interface IngredientExpAPI {
 //        @Query("Sname") Sname: String,
         @Query("Uingredient") Uingredient: String,
         @Query("Ucnt") Ucnt: String,
+        @Query("Udate") Udate: String
 //        @Query("query") userName: String
     ): Call<JsonArray>
 
@@ -21,5 +22,6 @@ interface IngredientExpAPI {
     fun minusOne(
         @Query("Uingredient") Uingredient: String,
         @Query("Ucnt") Ucnt: String,
+        @Query("Udate") Udate: String
     ): Call<JsonArray>
 }
