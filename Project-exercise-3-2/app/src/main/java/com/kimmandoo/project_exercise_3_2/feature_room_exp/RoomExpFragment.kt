@@ -51,7 +51,6 @@ class RoomExpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         /*Coroutine으로 roomDB에 접근할수 있음(그 전에 roomDB가 생성되어있어야됨)
         CoroutineScope(Dispatchers.IO).launch {
         dbList.addAll(helper.roomExpDao().getAll())
@@ -69,6 +68,7 @@ class RoomExpFragment : Fragment() {
 
         binding.refresh.setOnClickListener {
             expRoomDbBuild()
+
             Toast.makeText(context,"중복된 값이 보이면 새로고침을 한번 더 해주세요",Toast.LENGTH_SHORT).show()
         }
 
