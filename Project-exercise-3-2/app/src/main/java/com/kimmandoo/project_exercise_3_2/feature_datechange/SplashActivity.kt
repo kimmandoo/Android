@@ -36,7 +36,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val intent = Intent(this, MainActivity::class.java)
-
+        helper = Room.databaseBuilder(this, RoomHelper::class.java, "roomexpdb")
+            .build()
         CoroutineScope(Dispatchers.Main).launch {
             val job = CoroutineScope(Dispatchers.IO).async {
                 val previousDate = getDate()
@@ -53,19 +54,22 @@ class SplashActivity : AppCompatActivity() {
                     //날짜 바뀌었을 때 해야되는 작업 여기서
                     //앱 데이터를 서버로 넘기기
 
-//            helper = Room.databaseBuilder(this, RoomHelper::class.java, "roomexpdb")
-//                .build()
 
+
+                    Log.d("TestRoom", "${helper.roomExpDao().getAll()}")
                 } else {
                     //이전 날짜가 없다는 의미이므로 지금날짜 저장해줌.
                     if (previousDate.isNullOrEmpty()) {
                         Log.d("CurrentDate", "$formatted 비어있음")
                         saveDate(formatted)
                     }
-                    else{Log.d("CurrentDate", "$formatted 날짜가 동일")}
+                    else{
+                        Log.d("TestRoom", "${helper.roomExpDao().getAll()}")
+                        Log.d("CurrentDate", "$formatted 날짜가 동일")}
                 }
             }
             job.await()
+            delay(1000)
             startActivity(intent)
             finish()
         }
