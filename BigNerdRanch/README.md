@@ -7,3 +7,10 @@
     - MVC pattern
     - MVVM (ViewModel)
     - SIS(Saved Instance State)
+
+
+### Bitbox
+
+    - Databinding
+    - MVVM
+    - 

@@ -13,7 +13,9 @@ class RecycleActivity : AppCompatActivity() {
     private var player: ExoPlayer? = null
 
     private val TAG = "Recycle"
-    var stringItem = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4"
+//    var stringItem = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4"
+
+    var stringItem = "https://s3.ca-central-1.amazonaws.com/codingwithmitch/media/VideoPlayerRecyclerView/Sending+Data+to+a+New+Activity+with+Intent+Extras.mp4"
     val items = mutableListOf<String>(
         stringItem,
         stringItem,
