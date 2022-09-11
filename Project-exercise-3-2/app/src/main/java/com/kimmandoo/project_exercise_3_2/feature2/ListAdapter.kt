@@ -1,9 +1,11 @@
 package com.kimmandoo.project_exercise_3_2.feature2
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.kimmandoo.project_exercise_3_2.IngredientData
 import com.kimmandoo.project_exercise_3_2.databinding.ListItemBinding
 import com.kimmandoo.project_exercise_3_2.feature1.OneAdapter
 
@@ -15,7 +17,9 @@ class ListAdapter(private val list: MutableList<IngredientList>): RecyclerView.A
         val btnMinus = binding.ingredientItemIvMinus
         fun setItem(item: IngredientList){
             with(binding){
-                ingredientItemTv.text = item.name
+                val name = IngredientData().getNameFromId(item.name)
+                Log.d("feat2:","$name")
+                ingredientItemTv.text = name
             }
         }
     }
