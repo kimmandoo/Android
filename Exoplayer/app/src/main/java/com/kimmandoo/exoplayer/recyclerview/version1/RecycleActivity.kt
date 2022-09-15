@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.exoplayer2.ExoPlayer
+import com.kimmandoo.exoplayer.R
 import com.kimmandoo.exoplayer.databinding.ActivityRecycleBinding
 
 class RecycleActivity : AppCompatActivity() {
@@ -16,11 +17,13 @@ class RecycleActivity : AppCompatActivity() {
 //    var stringItem = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4"
 
     var stringItem = "https://s3.ca-central-1.amazonaws.com/codingwithmitch/media/VideoPlayerRecyclerView/Sending+Data+to+a+New+Activity+with+Intent+Extras.mp4"
+    var stringItem2 = "https://thumbs.gfycat.com/FoolhardyMiserlyAsiantrumpetfish-mobile.mp4"
+
     val items = mutableListOf<String>(
         stringItem,
+        stringItem2,
         stringItem,
-        stringItem,
-        stringItem,
+        stringItem2,
         stringItem,
     )
 
