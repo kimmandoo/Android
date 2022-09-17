@@ -6,7 +6,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 //@Entity(tableName = "roomexpDb")
-@Entity(tableName = "roomexpdb", primaryKeys = ["name", "expiration", "keyValue"])
+@Entity(tableName = "internalExpDb", primaryKeys = ["name", "expiration", "keyValue"])
 class RoomExpDB {
 //    @PrimaryKey(autoGenerate = true) //PK로 지정된 no의 값이 insert된다면 없을 때 자동으로 증가된 숫자값을 넣어줌
 //    @ColumnInfo

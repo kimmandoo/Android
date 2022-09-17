@@ -36,7 +36,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val intent = Intent(this, MainActivity::class.java)
-        helper = Room.databaseBuilder(this, RoomHelper::class.java, "roomexpdb")
+        helper = Room.databaseBuilder(this, RoomHelper::class.java, "internalExpDb")
             .build()
         CoroutineScope(Dispatchers.Main).launch {
             val job = CoroutineScope(Dispatchers.IO).async {

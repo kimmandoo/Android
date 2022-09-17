@@ -1,5 +1,7 @@
 package com.kimmandoo.project_exercise_3_2
 
+val s = "vegetable"
+
 class IngredientData {
 
     fun getNameFromId(nameCode: String): String {
@@ -7,7 +9,7 @@ class IngredientData {
         if (nameCode.contains("nut_")) return nut[nameCode].toString()
         if (nameCode.contains("fruit_")) return fruit[nameCode].toString()
         if (nameCode.contains("citrus_")) return citrus[nameCode].toString()
-        if (nameCode.contains("vegatable_")) return vegatable[nameCode].toString()
+        if (nameCode.contains("${s}_")) return vegatable[nameCode].toString()
         if (nameCode.contains("mushroom_")) return mushroom[nameCode].toString()
         if (nameCode.contains("meat_pork_")) return meat_pork[nameCode].toString()
         if (nameCode.contains("meat_beef_")) return meat_beef[nameCode].toString()
@@ -76,64 +78,64 @@ class IngredientData {
 
     //vegatable
     val vegatable = hashMapOf(
-        "vegatable_cabbage" to "양배추",            // 양배추
-        "vegatable_kohlrabi" to "콜라비",            // 콜라비
-        "vegatable_cauliflower" to "콜리플라워",        // 콜리플라워
-        "vegatable_broccoli" to "브로콜리",            // 브로콜리
-        "vegatable_kale" to "케일",                // 케일
-        "vegatable_napacabbage" to "배추",        // 배추
-        "vegatable_daikon" to "무",                // 무
-        "vegatable_radish" to "순무",                // 순무
-        "vegatable_shepherdpurse" to "냉이",        // 냉이
-        "vegatable_bokchoi" to "청경채",            // 청경채
-        "vegatable_chilipepper" to "고추",        // 고추
-        "vegatable_bellpepper" to "피망",            // 피망
-        "vegatable_paprika" to "파프리카",            // 파프리카
-        "vegatable_peperoncino" to "페페론치노",        // 페페론치노
-        "vegatable_eggplant" to "가지",            // 가지
-        "vegatable_potato" to "감자",                // 감자
-        "vegatable_tomato" to "토마토",                // 토마토
-        "vegatable_zucchini" to "주키니",            // 주키니
-        "vegatable_youngpumpkin" to "애호박",        // 애호박
-        "vegatable_pumpkin" to "호박",            // 호박
-        "vegatable_kabocha" to "단호박",            // 단호박
-        "vegatable_cucumber" to "오이",            // 오이
-        "vegatable_spinach" to "시금치",            // 시금치
-        "vegatable_beet" to "비트",                // 비트
-        "vegatable_carrot" to "당근",                // 당근
-        "vegatable_javanica" to "미나리",            // 미나리
-        "vegatable_celery" to "샐러리",                // 샐러리
-        "vegatable_angelica" to "당귀",            // 당귀
-        "vegatable_parsley" to "파슬리",            // 파슬리
-        "vegatable_parsnip" to "파스닙",            // 파스닙
-        "vegatable_asparagus" to "아스파라거스",            // 아스파라거스
-        "vegatable_malva" to "아욱",                // 아욱
-        "vegatable_cichorium" to "치커리",            // 치커리
-        "vegatable_cirsium" to "곤드레",            // 곤드레
-        "vegatable_mugwort" to "쑥",            // 쑥
-        "vegatable_coronarium" to "쑥갓",            // 쑥갓
-        "vegatable_burdock" to "우엉",            // 우엉
-        "vegatable_ragwort" to "곰취",            // 곰취
-        "vegatable_lettuce" to "상추",            // 상추
-        "vegatable_headlettuce" to "양상추",        // 양상추
-        "vegatable_ballonflower" to "도라지",        // 도라지
-        "vegatable_deodeok" to "더덕",            // 더덕
-        "vegatable_bracken" to "고사리",            // 고사리
-        "vegatable_sweetpotato" to "고구마",        // 고구마
-        "vegatable_taro" to "토란",                // 토란
-        "vegatable_lotusrhizome" to "연근",        // 연근
-        "vegatable_bamboosprouts" to "죽순",        // 죽순
-        "vegatable_ginseng" to "인삼",            // 인삼
-        "vegatable_ginger" to "생강",                // 생강
-        "vegatable_sedum" to "돌나물",                // 돌나물
-        "vegatable_soybeansprout" to "콩나물",        // 콩나물
-        "vegatable_mungbeansprout" to "숙주나물",        // 숙주나물
-        "vegatable_onion" to "양파",                // 양파
-        "vegatable_shallot" to "샬럿",            // 샬럿
-        "vegatable_tuberosum" to "부추",            // 부추
-        "vegatable_scallion" to "대파",            // 대파
-        "vegatable_proliferum" to "쪽파",            // 쪽파
-        "vegatable_perillaleaf" to "깻잎",            // 깻잎
+        "${s}_cabbage" to "양배추",            // 양배추
+        "${s}_kohlrabi" to "콜라비",            // 콜라비
+        "${s}_cauliflower" to "콜리플라워",        // 콜리플라워
+        "${s}_broccoli" to "브로콜리",            // 브로콜리
+        "${s}_kale" to "케일",                // 케일
+        "${s}_napacabbage" to "배추",        // 배추
+        "${s}_daikon" to "무",                // 무
+        "${s}_radish" to "순무",                // 순무
+        "${s}_shepherdpurse" to "냉이",        // 냉이
+        "${s}_bokchoi" to "청경채",            // 청경채
+        "${s}_chilipepper" to "고추",        // 고추
+        "${s}_bellpepper" to "피망",            // 피망
+        "${s}_paprika" to "파프리카",            // 파프리카
+        "${s}_peperoncino" to "페페론치노",        // 페페론치노
+        "${s}_eggplant" to "가지",            // 가지
+        "${s}_potato" to "감자",                // 감자
+        "${s}_tomato" to "토마토",                // 토마토
+        "${s}_zucchini" to "주키니",            // 주키니
+        "${s}_youngpumpkin" to "애호박",        // 애호박
+        "${s}_pumpkin" to "호박",            // 호박
+        "${s}_kabocha" to "단호박",            // 단호박
+        "${s}_cucumber" to "오이",            // 오이
+        "${s}_spinach" to "시금치",            // 시금치
+        "${s}_beet" to "비트",                // 비트
+        "${s}_carrot" to "당근",                // 당근
+        "${s}_javanica" to "미나리",            // 미나리
+        "${s}_celery" to "샐러리",                // 샐러리
+        "${s}_angelica" to "당귀",            // 당귀
+        "${s}_parsley" to "파슬리",            // 파슬리
+        "${s}_parsnip" to "파스닙",            // 파스닙
+        "${s}_asparagus" to "아스파라거스",            // 아스파라거스
+        "${s}_malva" to "아욱",                // 아욱
+        "${s}_cichorium" to "치커리",            // 치커리
+        "${s}_cirsium" to "곤드레",            // 곤드레
+        "${s}_mugwort" to "쑥",            // 쑥
+        "${s}_coronarium" to "쑥갓",            // 쑥갓
+        "${s}_burdock" to "우엉",            // 우엉
+        "${s}_ragwort" to "곰취",            // 곰취
+        "${s}_lettuce" to "상추",            // 상추
+        "${s}_headlettuce" to "양상추",        // 양상추
+        "${s}_ballonflower" to "도라지",        // 도라지
+        "${s}_deodeok" to "더덕",            // 더덕
+        "${s}_bracken" to "고사리",            // 고사리
+        "${s}_sweetpotato" to "고구마",        // 고구마
+        "${s}_taro" to "토란",                // 토란
+        "${s}_lotusrhizome" to "연근",        // 연근
+        "${s}_bamboosprouts" to "죽순",        // 죽순
+        "${s}_ginseng" to "인삼",            // 인삼
+        "${s}_ginger" to "생강",                // 생강
+        "${s}_sedum" to "돌나물",                // 돌나물
+        "${s}_soybeansprout" to "콩나물",        // 콩나물
+        "${s}_mungbeansprout" to "숙주나물",        // 숙주나물
+        "${s}_onion" to "양파",                // 양파
+        "${s}_shallot" to "샬럿",            // 샬럿
+        "${s}_tuberosum" to "부추",            // 부추
+        "${s}_scallion" to "대파",            // 대파
+        "${s}_proliferum" to "쪽파",            // 쪽파
+        "${s}_perillaleaf" to "깻잎",            // 깻잎
     )
 
     //mushroom
@@ -386,65 +388,65 @@ class IngredientData {
         "citrus_lime" to "라임",                    // 라임
         "citrus_yuzu" to "유자",                    // 유자
 
-        "vegatable_cabbage" to "양배추",            // 양배추
-        "vegatable_kohlrabi" to "콜라비",            // 콜라비
-        "vegatable_cauliflower" to "콜리플라워",        // 콜리플라워
-        "vegatable_broccoli" to "브로콜리",            // 브로콜리
-        "vegatable_kale" to "케일",                // 케일
-        "vegatable_napacabbage" to "배추",        // 배추
-        "vegatable_daikon" to "무",                // 무
-        "vegatable_radish" to "순무",                // 순무
-        "vegatable_shepherdpurse" to "냉이",        // 냉이
-        "vegatable_bokchoi" to "청경채",            // 청경채
-        "vegatable_chilipepper" to "고추",        // 고추
-        "vegatable_bellpepper" to "피망",            // 피망
-        "vegatable_paprika" to "파프리카",            // 파프리카
-        "vegatable_peperoncino" to "페페론치노",        // 페페론치노
-        "vegatable_eggplant" to "가지",            // 가지
-        "vegatable_potato" to "감자",                // 감자
-        "vegatable_tomato" to "토마토",                // 토마토
-        "vegatable_zucchini" to "주키니",            // 주키니
-        "vegatable_youngpumpkin" to "애호박",        // 애호박
-        "vegatable_pumpkin" to "호박",            // 호박
-        "vegatable_kabocha" to "단호박",            // 단호박
-        "vegatable_cucumber" to "오이",            // 오이
-        "vegatable_spinach" to "시금치",            // 시금치
-        "vegatable_beet" to "비트",                // 비트
-        "vegatable_carrot" to "당근",                // 당근
-        "vegatable_javanica" to "미나리",            // 미나리
-        "vegatable_celery" to "샐러리",                // 샐러리
-        "vegatable_angelica" to "당귀",            // 당귀
-        "vegatable_parsley" to "파슬리",            // 파슬리
-        "vegatable_parsnip" to "파스닙",            // 파스닙
-        "vegatable_asparagus" to "아스파라거스",            // 아스파라거스
-        "vegatable_malva" to "아욱",                // 아욱
-        "vegatable_cichorium" to "치커리",            // 치커리
-        "vegatable_cirsium" to "곤드레",            // 곤드레
-        "vegatable_mugwort" to "쑥",            // 쑥
-        "vegatable_coronarium" to "쑥갓",            // 쑥갓
-        "vegatable_burdock" to "우엉",            // 우엉
-        "vegatable_ragwort" to "곰취",            // 곰취
-        "vegatable_lettuce" to "상추",            // 상추
-        "vegatable_headlettuce" to "양상추",        // 양상추
-        "vegatable_ballonflower" to "도라지",        // 도라지
-        "vegatable_deodeok" to "더덕",            // 더덕
-        "vegatable_bracken" to "고사리",            // 고사리
-        "vegatable_sweetpotato" to "고구마",        // 고구마
-        "vegatable_taro" to "토란",                // 토란
-        "vegatable_lotusrhizome" to "연근",        // 연근
-        "vegatable_bamboosprouts" to "죽순",        // 죽순
-        "vegatable_ginseng" to "인삼",            // 인삼
-        "vegatable_ginger" to "생강",                // 생강
-        "vegatable_sedum" to "돌나물",                // 돌나물
-        "vegatable_soybeansprout" to "콩나물",        // 콩나물
-        "vegatable_mungbeansprout" to "숙주나물",        // 숙주나물
-        "vegatable_onion" to "양파",                // 양파
-        "vegatable_shallot" to "샬럿",            // 샬럿
-        "vegatable_tuberosum" to "부추",            // 부추
-        "vegatable_scallion" to "대파",            // 대파
-        "vegatable_proliferum" to "쪽파",            // 쪽파
-        "vegatable_perillaleaf" to "깻잎",            // 깻잎
-        "vegatable_" to "",        //
+        "${s}_cabbage" to "양배추",            // 양배추
+        "${s}_kohlrabi" to "콜라비",            // 콜라비
+        "${s}_cauliflower" to "콜리플라워",        // 콜리플라워
+        "${s}_broccoli" to "브로콜리",            // 브로콜리
+        "${s}_kale" to "케일",                // 케일
+        "${s}_napacabbage" to "배추",        // 배추
+        "${s}_daikon" to "무",                // 무
+        "${s}_radish" to "순무",                // 순무
+        "${s}_shepherdpurse" to "냉이",        // 냉이
+        "${s}_bokchoi" to "청경채",            // 청경채
+        "${s}_chilipepper" to "고추",        // 고추
+        "${s}_bellpepper" to "피망",            // 피망
+        "${s}_paprika" to "파프리카",            // 파프리카
+        "${s}_peperoncino" to "페페론치노",        // 페페론치노
+        "${s}_eggplant" to "가지",            // 가지
+        "${s}_potato" to "감자",                // 감자
+        "${s}_tomato" to "토마토",                // 토마토
+        "${s}_zucchini" to "주키니",            // 주키니
+        "${s}_youngpumpkin" to "애호박",        // 애호박
+        "${s}_pumpkin" to "호박",            // 호박
+        "${s}_kabocha" to "단호박",            // 단호박
+        "${s}_cucumber" to "오이",            // 오이
+        "${s}_spinach" to "시금치",            // 시금치
+        "${s}_beet" to "비트",                // 비트
+        "${s}_carrot" to "당근",                // 당근
+        "${s}_javanica" to "미나리",            // 미나리
+        "${s}_celery" to "샐러리",                // 샐러리
+        "${s}_angelica" to "당귀",            // 당귀
+        "${s}_parsley" to "파슬리",            // 파슬리
+        "${s}_parsnip" to "파스닙",            // 파스닙
+        "${s}_asparagus" to "아스파라거스",            // 아스파라거스
+        "${s}_malva" to "아욱",                // 아욱
+        "${s}_cichorium" to "치커리",            // 치커리
+        "${s}_cirsium" to "곤드레",            // 곤드레
+        "${s}_mugwort" to "쑥",            // 쑥
+        "${s}_coronarium" to "쑥갓",            // 쑥갓
+        "${s}_burdock" to "우엉",            // 우엉
+        "${s}_ragwort" to "곰취",            // 곰취
+        "${s}_lettuce" to "상추",            // 상추
+        "${s}_headlettuce" to "양상추",        // 양상추
+        "${s}_ballonflower" to "도라지",        // 도라지
+        "${s}_deodeok" to "더덕",            // 더덕
+        "${s}_bracken" to "고사리",            // 고사리
+        "${s}_sweetpotato" to "고구마",        // 고구마
+        "${s}_taro" to "토란",                // 토란
+        "${s}_lotusrhizome" to "연근",        // 연근
+        "${s}_bamboosprouts" to "죽순",        // 죽순
+        "${s}_ginseng" to "인삼",            // 인삼
+        "${s}_ginger" to "생강",                // 생강
+        "${s}_sedum" to "돌나물",                // 돌나물
+        "${s}_soybeansprout" to "콩나물",        // 콩나물
+        "${s}_mungbeansprout" to "숙주나물",        // 숙주나물
+        "${s}_onion" to "양파",                // 양파
+        "${s}_shallot" to "샬럿",            // 샬럿
+        "${s}_tuberosum" to "부추",            // 부추
+        "${s}_scallion" to "대파",            // 대파
+        "${s}_proliferum" to "쪽파",            // 쪽파
+        "${s}_perillaleaf" to "깻잎",            // 깻잎
+        "${s}_" to "",        //
 
         "mushroom_kingoyster" to "새송이버섯",            // 새송이버섯
         "mushroom_enoki" to "팽이버섯",                // 팽이버섯

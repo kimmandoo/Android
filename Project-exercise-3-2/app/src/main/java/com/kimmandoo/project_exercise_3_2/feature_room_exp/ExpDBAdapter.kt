@@ -3,6 +3,7 @@ package com.kimmandoo.project_exercise_3_2.feature_room_exp
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.kimmandoo.project_exercise_3_2.IngredientData
 import com.kimmandoo.project_exercise_3_2.databinding.DbItemBinding
 import com.kimmandoo.project_exercise_3_2.databinding.ExpdbItemBinding
 
@@ -11,7 +12,9 @@ class ExpDBAdapter(val items: MutableList<RoomExpDB>): RecyclerView.Adapter<Recy
     inner class ItemViewHolder(private val binding: ExpdbItemBinding): RecyclerView.ViewHolder(binding.root){
         fun setItem(item: RoomExpDB){
             with(binding){
-                expItemName.text = item.name
+                val name = IngredientData().getNameFromId(item.name)
+
+                expItemName.text = name
                 expItemCount.text = item.count
                 expItemExp.text = item.exp
             }

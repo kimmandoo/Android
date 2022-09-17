@@ -57,7 +57,7 @@ class RoomExpFragment : Fragment() {
         }
         */
 
-        helper = Room.databaseBuilder(requireContext(), RoomHelper::class.java, "roomexpdb")
+        helper = Room.databaseBuilder(requireContext(), RoomHelper::class.java, "internalExpDb")
             .build()
         dbAdapter = ExpDBAdapter(dbList)
         dbList.clear()
