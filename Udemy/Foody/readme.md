@@ -1,5 +1,9 @@
 #### Udemy Foody
 
-- [ ] Navigation + BottomNavigationBar
+---
 
-- [ ] 
+##### Navigation + BottomNavigationBar
+
+- Shimmer Recyclerview Library
+
+- 
