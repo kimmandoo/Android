@@ -70,7 +70,6 @@ class LoginFragment : Fragment() {
                         ).show()
                     }
                 }
-
         }
 
         binding.signup.setOnClickListener {
@@ -87,8 +86,7 @@ class LoginFragment : Fragment() {
                         var gson = GsonBuilder().setLenient().create()
                         val retrofit = Retrofit.Builder()
                             .baseUrl("http://jaeryurp.duckdns.org:40131/")
-//            .addConverterFactory(ScalarsConverterFactory.create())
-                            .addConverterFactory(GsonConverterFactory.create(gson)) //있으나마나한 코드...
+                            .addConverterFactory(GsonConverterFactory.create(gson))
                             .build()
                         val api = retrofit.create(createAPI::class.java)
                         val callResult = api.createUser(user!!.uid)

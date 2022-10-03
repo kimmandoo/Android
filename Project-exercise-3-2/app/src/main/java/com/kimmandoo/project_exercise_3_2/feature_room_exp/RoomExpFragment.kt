@@ -88,7 +88,7 @@ class RoomExpFragment : Fragment() {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
         val api = retrofit.create(GetIngredientAPI::class.java)
-        val callList = api.getList()
+        val callList = api.getList("test")
 
         var resultJsonArray: JsonArray?
 
