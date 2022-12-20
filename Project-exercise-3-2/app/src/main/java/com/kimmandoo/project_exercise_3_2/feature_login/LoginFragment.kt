@@ -29,11 +29,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class LoginFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
-
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
     lateinit var email: String
     lateinit var password: String
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = Firebase.auth
@@ -113,7 +113,6 @@ class LoginFragment : Fragment() {
                         ).show()
                     }
                 }
-
 
         }
 

@@ -2,6 +2,6 @@
     <string name="app_name">WordWrap</string>
     <string name="test">Simple (Greedy) Break Strategy 는 LineBreak 의 후보 (~= 종단점) 을 하나씩 보면서 이 줄에 넣을 수 있는 최대한의 텍스트를 집어넣고 나머지는 다음줄로 넘깁니다.
 Balanced Break Strategy 는 TeX 의 LineBreaking 알고리즘을 구현하고 있습니다. 위 알고리즘은 hyphen 을 활용하여 전반적으로 텍스트 한줄 한줄의 길이가 비슷하도록 최적화 시켜주어 가독성을 높여줍니다.
-High Quality Break Strategy 도 마찬가지로 TeX 의 LineBreaking 알고리즘을 활용하지만 Balanced 와 다르게 마지막 줄은 다른 줄들과 비슷한 길이가 아니여도 괜찮도록 알고리즘의 최적화 metric 중 하나인 penalty를 조절하는 차이가 있습니다.
+High Quality Break Strategy 도 마찬가지로 TeX 의 LineBreaking 알고리즘을 활용하지만 Balanced와 다르게 마지막 줄은 다른 줄들과 비슷한 길이가 아니여도 괜찮도록 알고리즘의 최적화 metric 중 하나인 penalty를 조절하는 차이가 있습니다.
 </string>
 </resources>
